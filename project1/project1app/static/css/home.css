@@ -1,0 +1,17 @@
+.container{
+  padding-top: 100px;
+}
+.ending{
+  background-color: #edf2f4;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.thumbnail{
+  text-align: center;
+}
+.bttn{
+  color: black;
+  font-weight: bold;
+  width: 340px;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/review.css' %}">
+    <title>owner</title>
+  </head>
+  <style>
+    body{
+      background-image: url("{% static 'images/signup.jpg' %}");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+  <body>
+      <form class="" action="views" method="post">
+        {% csrf_token %}
+          <h1>OWNER</h1>
+        <input type="submit" name="viewreview" class="bttn" value="view review">
+        <a href="#"><input type="submit"  class="bttn" value="logout"></a>
+      </form>
+    <center>
+    <h1>RESERVATION</h1>
+    <table>
+        <td>Restaurant</td>
+        <td>Name</td>
+        <td>Phone</td>
+        <td>Number of people</td>
+        <td>Date</td>
+        <td>Time</td>
+        <td>Message</td>
+      {% if review %}
+      {% for i in review %}
+
+<tr>
+    <td> {{i.hotelname}}</td>
+    <td> {{i.name}}</td>
+    <td> {{i.phone}}</td>
+    <td> {{i.numberPeople}}</td>
+    <td> {{i.date}}</td>
+    <td> {{i.time}}</td>
+    <td> {{i.message}}</td>
+</tr>
+    {% endfor %}
+    {% endif %}
+</table>
+<center>
+  </body>
+</html>

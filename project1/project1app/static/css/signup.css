@@ -1,0 +1,14 @@
+.contan{
+  float: right;
+  padding-top: 140px;
+  text-align: center;
+}
+.form-group{
+  padding-top: 20px;
+  padding-right: 50px;
+  font-size: 20px;
+}
+.btn{
+  background-color: grey;
+  color: white;
+}

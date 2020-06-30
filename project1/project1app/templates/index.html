@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Restaurent reservation and review</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/style1.css" %}">
+  </head>
+  <body>
+    <nav>
+    <p class="navbar-text">Restaurant Reservation And Review</p>
+    <form method='POST' class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        {% csrf_token %}
+        <input type="text" class="form-control" name='search' placeholder="Search for Restaurant" required>
+      </div>
+      <input type="submit" name="submitt" value="Submit">
+    </form>
+    {{value}}
+    <div class="right">
+      <a href="#about" class="navbar-text">About</a>
+      <a href="#contac"  class="navbar-text">Contact</a>
+      <a href="hotel"  class="navbar-text">Register </a>
+      <a href="signup"  class="navbar-text">Signup</a>
+      <a href="login"  class="navbar-text">Login</a>
+    </div>
+    </nav>
+    <img src="{% static "images/home.jpg" %}" alt="yummy">
+    <div class="container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 col-md-4">
+          <a href="#" class="thumbnail"><img src="{% static "images/img1.jpg" %}" class="img-responsive" alt="..."><strong>CHINESE</strong></a>
+        </div>
+        <div class="col-md-6 col-md-4">
+          <a href="#" class="thumbnail"><img src="{% static "images/img2.jpg" %}" class="img-responsive" alt="..."><strong>THAI</strong></a>
+        </div>
+        <div class="col-md-6 col-md-4">
+          <a href="#" class="thumbnail"><img src="{% static "images/img3.jpg" %}" class="img-responsive" alt="..."><strong>ITALIAN</strong></a>
+        </div>
+        <div class="col-md-6 col-md-4">
+          <a href="#" class="thumbnail"><img src="{% static "images/img4.jpg" %}" class="img-responsive" alt="..."><strong>INDIAN</strong></a>
+        </div>
+        <div class="col-md-6 col-md-4">
+          <a href="#" class="thumbnail"><img src="{% static "images/img5.jpg" %}" class="img-responsive" alt="..."><strong>AMERICAN</strong></a>
+        </div>
+        <div class="col-md-6 col-md-4">
+          <a href="#" class="thumbnail"><img src="{% static "images/img6.jpg" %}" class="img-responsive" alt="..."><strong>GREEK</strong></a>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div id="about" class="boxes">
+    <p id="abt"><strong>ABOUT</strong></p><br>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 col-md-4">
+            <img src="{% static "images/about.jpg" %}" class="img-responsive" alt="...">
+          </div>
+          <div class="col-lg-6 col-md-4">
+            <p id="abt"><em>A platform to check out various Restaurant with respect to Menu, Ambience, Reviews and  Reserve tables.</em></p><br>
+            <p id="abt"><em>Give the feedback of your experience in the restaurant</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+    <div class="contact">
+    <p id="contac"><strong>CONTACT</strong></p>
+      <div class="container-fluid">
+      <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> ancypb1999@gmail.com</p>
+        <p><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> 8050209622</p><br>
+        <form class="form-horizontal" action="index" method="POST">
+          {% csrf_token %}
+            <div class="form-group">
+          <label><span class="glyphicon glyphicon-user" aria-hidden="true"></span></label>
+          <input class="con1" type="text" name="name" value="" size="50" placeholder="Name" required><br>
+          </div>
+          <div class="form-group">
+          <label><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span></label>
+          <input class="con1"id="con1" type="tel" pattern="[0-9]{10}" name="phone" value=""size="50" placeholder="Phone" required><br>
+          </div>
+          <div class="form-group">
+          <label><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></label>
+          <input class="con1" type="email" name="email" value="" size="50" placeholder="Email" required><br>
+          </div>
+          <div class="form-group">
+          <label><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></label>
+        <input class="con1" type="text" name="message" value="" size="50" placeholder="Message" required><br>
+        </div>
+        <div class="form-group">
+        <input type="submit" name="submit" class="bttn" value="Send message" >
+        </div>
+      </div>
+        </form>
+      </div>
+    </div>
+    </div>
+    <div class="ending">
+      <p><em>There is no sincere love than love of food</em></p>
+    </div>
+  </body>
+</html>

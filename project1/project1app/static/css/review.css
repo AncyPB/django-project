@@ -1,0 +1,23 @@
+body{
+  background-image: url(static/images/home.jpg);
+}
+table{
+  background-color: white;
+  opacity: 0.8;
+}
+td{
+  width: 300px;
+  height: 75px;
+  text-align: center;
+  font-size: 22px;
+  font-style: oblique;
+  font-weight: bold;
+}
+h1{
+  font-size: 42px;
+}
+.bttn{
+  background-color: black;
+  color: white;
+  font-size: 20px;
+}

@@ -1,0 +1,52 @@
+.right p{
+  float: right;
+  font-size: 22px;
+}
+.con2{
+  height:200px;
+  text-align: center;
+}
+.col-lg-6 p{
+  font-size: 23px;
+  text-align: justify;
+}
+.row{
+  margin-top: 20px;
+}
+.thumbnail{
+  text-align: center;
+  font-size: 15px;
+  color: black;
+}
+.container{
+  padding-top: 90px
+}
+p{
+    font-family: 'Arizonia';font-size: 32px;
+}
+.contact{
+  font-family: 'Arizonia';font-size: 22px;
+  padding-top: 0px;
+  text-align: center;
+  font-size: 20px;
+}
+.bttn{
+  background-color: black;
+  color: white;
+  font-size: 20px;
+}
+.ending{
+  background-color: #edf2f4;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.boxes{
+  padding-top: 105px;
+}
+#abt{
+  font-size: 30px;
+}
+#contac{
+  font-size: 30px;
+}

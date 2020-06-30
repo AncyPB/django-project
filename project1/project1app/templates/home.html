@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/home.css" %}">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <p class="navbar-text">Restaurant Reservation And Review</p>
+    <form method='POST' action="home" class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        {% csrf_token %}
+        <input type="text" class="form-control" name='search' placeholder="Search for Restaurant" required>
+      </div>
+      <input type="submit" name="submitt" value="Submit">
+    </form>
+    {{value}}
+    <div class="right">
+      <a href="login"  class="navbar-text">Logout</a>
+    </div>
+    </nav>
+
+    <div class="container">
+    <div class="container-fluid">
+      <div class="row">
+        <form method='POST' action="home">
+          {% csrf_token %}
+        {% if restaurant %}
+        {% for i in restaurant %}
+        <div class="col-sm-6 col-md-4" id="pic">
+          <a href="#" class="thumbnail"><img src={{i.image.url}}  class="img-wrap" alt="..."><input type="submit" name="submit" class="bttn" value="{{i.hotelname}}"></a>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+    </div>
+<div class="ending">
+  <p><em>There is no sincere love than love of food</em></p>
+</div>
+  </body>
+</html>

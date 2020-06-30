@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/review.css' %}">
+    <title>review</title>
+  </head>
+  <style>
+    body{
+      background-image: url("{% static 'images/signup.jpg' %}");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+  <body>
+    <center>
+    <h1>REVIEWS</h1>
+    <table>
+        <td>Restaurant</td>
+        <td>Email id</td>
+        <td>Food</td>
+        <td>Ambience</td>
+        <td>Hospitality</td>
+        <td>Rating</td>
+        <td>Review</td>
+      {% if review %}
+      {% for i in review %}
+
+<tr>
+    <td> {{i.hotelname}}</td>
+    <td> {{i.email}}</td>
+    <td> {{i.food}}</td>
+    <td> {{i.ambience}}</td>
+    <td> {{i.hospitality}}</td>
+    <td> {{i.rating}}</td>
+    <td> {{i.review}}</td>
+</tr>
+    {% endfor %}
+    {% endif %}
+</table>
+<center>
+  </body>
+</html>
