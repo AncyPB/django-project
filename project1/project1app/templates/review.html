@@ -7,6 +7,124 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title>review</title>
   </head>
+  <style>
+  .stars{
+    display: flex;
+    flex-direction: row-reverse;
+    font-size:50px;
+    justify-content: center;
+    text-align:center;
+    align-items: center;
+    width:10em;
+    margin: auto;
+  }
+  .stars input {
+    display:none;
+  }
+  .stars label {
+    color:#ccc;
+    cursor:pointer;
+  }
+  .stars :checked ~ label {
+    color:#fd7e14;
+  }
+  .stars label:hover,
+  .stars label:hover ~ label {
+    color: #fd7e14;
+  }
+
+  .sta{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    font-size:50px;
+    text-align:center;
+    width:10em;
+    margin: auto;
+  }
+  .sta input {
+    display:none;
+  }
+  .sta label {
+    color:#ccc;
+    cursor:pointer;
+  }
+  .sta :checked ~ label {
+    color:#fd7e14;
+  }
+  .sta label:hover,
+  .sta label:hover ~ label {
+    color: #fd7e14;
+  }
+
+  .star-rating {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      font-size:50px;
+      text-align:center;
+      width:10em;
+      margin: auto;
+    }
+    .star-rating input {
+      display:none;
+    }
+    .star-rating label {
+      color:#ccc;
+      cursor:pointer;
+    }
+    .star-rating :checked ~ label {
+      color:#fd7e14;
+    }
+    .star-rating label:hover,
+    .star-rating label:hover ~ label {
+      color: #fd7e14;
+    }
+
+  .stars_r {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    font-size:50px;
+    text-align:center;
+    width:10em;
+    margin: auto;
+    outline: none;
+  }
+  .stars_r input {
+    display:none;
+  }
+  .stars_r label {
+    color:#ccc;
+    cursor:pointer;
+  }
+  .stars_r :checked ~ label {
+    color:#fd7e14;
+  }
+  .stars_r label:hover,
+  .stars_r label:hover ~ label {
+    color: #fd7e14;
+  }
+  .con1{
+    border: 0px;
+  }
+  .form-group{
+    text-align: center;
+  }
+  li{
+    display: inline-block;
+    margin: auto;
+  }
+
+  .con4{
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+  }
+  .container{
+    padding-top: 40px
+  }
+  </style>
   <body>
     <div class="container">
     <div class="contact">
@@ -16,27 +134,88 @@
       {% csrf_token %}
         <div class="form-group">
       <label><span class="glyphicon glyphicon-user" aria-hidden="true"></span></label>
-      <input class="con1" type="emaul" name="email" value="" size="50" placeholder="Email"><br>
+      <input class="con4" type="email" name="email" value="" size="60" placeholder="Email" required>
       </div>
+      <ul>
+        <li>
+          <div class="form-group">
+          <label><span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> Food rating:</label>
+          <input class="con1" id="food" type="tel" pattern="[0-5]{1}" name="food" value=""size="7">
+          <div class="star-rating">
+            <input type="radio" id="5-stars" name="rating" value="5" />
+            <label for="5-stars" class="star">&#9733;</label>
+            <input type="radio" id="4-stars" name="rating" value="4" />
+            <label for="4-stars" class="star">&#9733;</label>
+            <input type="radio" id="3-stars" name="rating" value="3" />
+            <label for="3-stars" class="star">&#9733;</label>
+            <input type="radio" id="2-stars" name="rating" value="2" />
+            <label for="2-stars" class="star">&#9733;</label>
+            <input type="radio" id="1-star" name="rating" value="1" />
+            <label for="1-star" class="star">&#9733;</label>
+          </div>
+          </div>
+        </li>
+
+      <li>
       <div class="form-group">
-      <label><span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span></label>
-      <input class="con1"id="con1" type="tel" pattern="[0-5]{1}" name="food" value=""size="50" placeholder="Food rating in range 0-5"><br>
-      </div>
+      <label><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Ambience rating:</label>
+      <input class="con1" id="ambience" type="tel" pattern="[0-5]{1}" name="ambience" value="" size="1">
+      <div class="sta">
+        <input type="radio" id="stars-1" name="rating1" value="5" />
+        <label for="stars-1" class="star1">&#9733;</label>
+        <input type="radio" id="stars-2" name="rating1" value="4" />
+        <label for="stars-2" class="star1">&#9733;</label>
+        <input type="radio" id="stars-3" name="rating1" value="3" />
+        <label for="stars-3" class="star1">&#9733;</label>
+        <input type="radio" id="stars-4" name="rating1" value="2" />
+        <label for="stars-4" class="star1">&#9733;</label>
+        <input type="radio" id="star-5" name="rating1" value="1" />
+        <label for="star-5" class="star1">&#9733;</label>
+      </div></div>
+    </li>
+
+<li>
       <div class="form-group">
-      <label><span class="glyphicon glyphicon-home" aria-hidden="true"></span></label>
-      <input class="con1" type="tel" pattern="[0-5]{1}" name="ambience" value="" size="50" placeholder="Ambience rating in range 0-5"><br>
+      <label><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Hospitality rating:</label>
+      <input class="con1" id="hospitality" type="tel" pattern="[0-5]{1}" name="hospitality" value="" size="1">
+      <div class="stars">
+        <input type="radio" id="stars1" name="rating2" value="5" />
+        <label for="stars1" class="star1">&#9733;</label>
+        <input type="radio" id="stars2" name="rating2" value="4" />
+        <label for="stars2" class="star1">&#9733;</label>
+        <input type="radio" id="stars3" name="rating2" value="3" />
+        <label for="stars3" class="star1">&#9733;</label>
+        <input type="radio" id="stars4" name="rating2" value="2" />
+        <label for="stars4" class="star1">&#9733;</label>
+        <input type="radio" id="star5" name="rating2" value="1" />
+        <label for="star5" class="star1">&#9733;</label>
       </div>
+      </div>
+    </li>
+
+  <li>
       <div class="form-group">
-      <label><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></label>
-      <input class="con1" type="tel" pattern="[0-5]{1}" name="hospitality" value="" size="50" placeholder="Hospitality rating in range 0-5"><br>
+      <label><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Rating:                </label>
+      <input class="con1" id="rating" type="tel" pattern="[0-5]{1}" name="ratings" value="" size="9" required >
+      <div class="stars_r">
+        <input type="radio" id="stars01" name="rating3" value="5" />
+        <label for="stars01" class="star1">&#9733;</label>
+        <input type="radio" id="stars02" name="rating3" value="4" />
+        <label for="stars02" class="star1">&#9733;</label>
+        <input type="radio" id="stars03" name="rating3" value="3" />
+        <label for="stars03" class="star1">&#9733;</label>
+        <input type="radio" id="stars04" name="rating3" value="2" />
+        <label for="stars04" class="star1">&#9733;</label>
+        <input type="radio" id="star05" name="rating3" value="1" />
+        <label for="star05" class="star1">&#9733;</label>
       </div>
-      <div class="form-group">
-      <label><span class="glyphicon glyphicon-star" aria-hidden="true"></span></label>
-      <input class="con1" type="tel" pattern="[0-5]{1}" name="rating" value="" size="50" placeholder="Rating rating in range 0-5"><br>
       </div>
+    </li>
+
+    </ul>
       <div class="form-group">
       <label><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></label>
-    <input class="con1" type="text" name="review" value="" size="50" placeholder="Review"><br>
+    <input class="con4" type="text" name="review" value="" size="60" placeholder="Review"><br>
     </div>
     <div class="form-group">
     <input type="submit" name="submitt" class="bttn" value="Submit" >
@@ -49,5 +228,49 @@
     <div class="ending">
     <p><em>There is no sincere love than love of food</em></p>
     </div>
+    <script type="text/javascript">
+    const stars=document.getElementsByName('rating');
+    for(let i=0; i<stars.length; i++){
+    stars[i].addEventListener("click",function(){
+      var val =document.querySelector('input[name="rating"]:checked').value;
+      console.log(val);
+      const name =document.querySelector("#food");
+      name.value = val;
+  	})
+  }
+
+
+  const stars_a=document.getElementsByName('rating1');
+  for(let i=0; i<stars_a.length; i++){
+  stars_a[i].addEventListener("click",function(){
+    var val =document.querySelector('input[name="rating1"]:checked').value;
+    console.log(val);
+    const name =document.querySelector("#ambience");
+    name.value = val;
+  })
+}
+
+
+const stars_h=document.getElementsByName('rating2');
+for(let i=0; i<stars_h.length; i++){
+stars_h[i].addEventListener("click",function(){
+  var val =document.querySelector('input[name="rating2"]:checked').value;
+  console.log(val);
+  const name =document.querySelector("#hospitality");
+  name.value = val;
+})
+}
+
+
+const stars_r=document.getElementsByName('rating3');
+for(let i=0; i<stars_r.length; i++){
+stars_r[i].addEventListener("click",function(){
+  var val =document.querySelector('input[name="rating3"]:checked').value;
+  console.log(val);
+  const name =document.querySelector("#rating");
+  name.value = val;
+})
+}
+    </script>
   </body>
 </html>
